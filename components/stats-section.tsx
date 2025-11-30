@@ -134,7 +134,7 @@ export function StatsSection({
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Network</span>
-              <span className="text-sm font-medium text-foreground">Ethereum</span>
+              <span className="text-sm font-medium text-foreground">Base Sapolia</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Wallet Status</span>
