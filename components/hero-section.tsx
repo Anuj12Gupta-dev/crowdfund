@@ -35,7 +35,7 @@ export function HeroSection({ isConnected }: HeroSectionProps) {
             <span className="text-balance">
               Fund the Future,
               <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
+              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary via-secondary to-accent animate-gradient">
                 Together
               </span>
             </span>

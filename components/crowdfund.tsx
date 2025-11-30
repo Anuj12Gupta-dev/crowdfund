@@ -8,6 +8,12 @@ import { DonationCard } from "./donation-card"
 import { StatsSection } from "./stats-section"
 import { ParticleBackground } from "./particle-background"
 
+declare global {
+  interface Window {
+    ethereum?: any
+  }
+}
+
 const contractAddress = "0x31a1A54627B7A118140472A7e555c820E0A514eA"
 
 const abi = [
@@ -137,14 +143,11 @@ export default function Crowdfund() {
   }
 
   async function handleYourBalance() {
-    if (!contract) return
+    if (!contract || !accounts) return
     setIsLoading(true)
     try {
-      const address = await contract.runner?.getAddress()
-      if (address) {
-        const yourFunds = await contract.checkYourFunds(address)
-        setYourBalance(ethers.formatEther(yourFunds))
-      }
+      const yourFunds = await contract.checkYourFunds(accounts)
+      setYourBalance(ethers.formatEther(yourFunds))
     } catch (error) {
       console.error("Failed to check your balance:", error)
     } finally {
