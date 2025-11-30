@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-const contractAddress = "0x31a1A54627B7A118140472A7e555c820E0A514eA"
+const contractAddress = "0xed41836815061923c6F36915313200ea309207B0"
 
 const abi = [
   {
