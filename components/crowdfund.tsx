@@ -134,6 +134,7 @@ export default function Crowdfund() {
     setIsLoading(true)
     try {
       const balanceAll = await contract.checkAllFunds()
+      console.log(balanceAll)
       setBalance(ethers.formatEther(balanceAll))
     } catch (error) {
       console.error("Failed to check balance:", error)
@@ -147,6 +148,7 @@ export default function Crowdfund() {
     setIsLoading(true)
     try {
       const yourFunds = await contract.checkYourFunds(accounts)
+      console.log(yourFunds)
       setYourBalance(ethers.formatEther(yourFunds))
     } catch (error) {
       console.error("Failed to check your balance:", error)
