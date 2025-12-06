@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-const contractAddress = "0xed41836815061923c6F36915313200ea309207B0"
+const contractAddress = "0x57E819ae60691aD6754F47cb1FcEB7214cdB6d4f"
 
 const abi = [
   {
@@ -135,6 +135,7 @@ export default function Crowdfund() {
     try {
       const balanceAll = await contract.checkAllFunds()
       console.log(balanceAll)
+      console.log(ethers.formatEther(balanceAll))      
       setBalance(ethers.formatEther(balanceAll))
     } catch (error) {
       console.error("Failed to check balance:", error)

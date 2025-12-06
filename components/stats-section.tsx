@@ -19,7 +19,7 @@ function AnimatedNumber({ value }: { value: string }) {
 
   useEffect(() => {
     if (value) {
-      setDisplayValue(Number.parseFloat(value).toFixed(4))
+      setDisplayValue(value)
     }
   }, [value])
 
@@ -34,10 +34,11 @@ export function StatsSection({
   onCheckBalance,
   onCheckYourBalance,
 }: StatsSectionProps) {
+  console.log(balance)
   return (
     <div className="space-y-6">
       <Card className="relative overflow-hidden border-border/50 bg-card/80 backdrop-blur-xl group hover:border-primary/30 transition-all duration-500">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         <CardContent className="p-6 relative">
           <div className="flex items-start justify-between mb-4">
@@ -71,7 +72,7 @@ export function StatsSection({
           <div className="mt-4">
             <div className="h-2 bg-muted rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000 ease-out"
+                className="h-full bg-linear-to-br from-primary to-secondary rounded-full transition-all duration-1000 ease-out"
                 style={{
                   width: balance ? `${Math.min(Number.parseFloat(balance) * 10, 100)}%` : "0%",
                 }}
@@ -82,7 +83,7 @@ export function StatsSection({
       </Card>
 
       <Card className="relative overflow-hidden border-border/50 bg-card/80 backdrop-blur-xl group hover:border-secondary/30 transition-all duration-500">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         <CardContent className="p-6 relative">
           <div className="flex items-start justify-between mb-4">
